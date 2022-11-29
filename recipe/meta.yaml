@@ -1,5 +1,5 @@
 {% set name = "h5pyd" %}
-{% set version = "0.11.0" %}
+{% set version = "0.12.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/h5pyd-{{ version }}.tar.gz
-  sha256: 2b12a10096ff4164e9127484de56a1f6fc4014c251fc1f2176d21a5a2f93962a
+  sha256: 4673618744f0c3435a8181b132a8e18b2c6f20d2438983aa01452e6266574980
 
 build:
   entry_points:
@@ -35,16 +35,16 @@ requirements:
     - pip
   run:
     - python >=3.6
-    - msrestazure
-    - google-auth <2.0dev
-    - adal
-    - cryptography
-    - google-api-python-client
-    - google-auth-oauthlib
-    - requests-unixsocket
     - numpy >=1.17.3
+    - requests-unixsocket
     - pytz
     - pyjwt
+    - msrestazure
+    - cryptography
+    - google-api-python-client
+    - google-auth-oauthlib ==0.5.3
+    - google-auth <2.0dev
+    - adal
 
 test:
   imports:
