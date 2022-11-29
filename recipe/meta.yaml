@@ -35,16 +35,16 @@ requirements:
     - pip
   run:
     - python >=3.6
-    - msrestazure
-    - google-auth <2.0dev
-    - adal
-    - cryptography
-    - google-api-python-client
-    - google-auth-oauthlib
-    - requests-unixsocket
     - numpy >=1.17.3
+    - requests-unixsocket
     - pytz
     - pyjwt
+    - msrestazure
+    - cryptography
+    - google-api-python-client
+    - google-auth-oauthlib ==0.5.3
+    - google-auth <2.0dev
+    - adal
 
 test:
   imports:
