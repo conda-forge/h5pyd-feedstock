@@ -1,5 +1,5 @@
 {% set name = "h5pyd" %}
-{% set version = "0.16.0" %}
+{% set version = "0.17.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/h5pyd-{{ version }}.tar.gz
-  sha256: 97b6d50fca133178735eadccba82c791fd19dec2be616b7397544e16fefb22b1
+  sha256: 9685207fcc90cc1123d398c2691f11172204cf00b5e0e11946e43df91affa3d9
 
 build:
   entry_points:
@@ -31,11 +31,11 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.7
     - pkgconfig
     - pip
   run:
-    - python >=3.6
+    - python >=3.7
     - numpy >=1.17.3
     - requests-unixsocket
     - pytz
