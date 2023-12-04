@@ -31,11 +31,11 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.7
     - pkgconfig
     - pip
   run:
-    - python >=3.6
+    - python >=3.7
     - numpy >=1.17.3
     - requests-unixsocket
     - pytz
