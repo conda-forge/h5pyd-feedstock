@@ -1,5 +1,5 @@
 {% set name = "h5pyd" %}
-{% set version = "0.17.0" %}
+{% set version = "0.18.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/h5pyd-{{ version }}.tar.gz
-  sha256: 9685207fcc90cc1123d398c2691f11172204cf00b5e0e11946e43df91affa3d9
+  sha256: 53cee21d7f2d8c25671e4a9d615b1833a495bc198bc44fe14d841298ae0684be
 
 build:
   entry_points:
