@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/h5pyd-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/h5pyd-{{ version }}.tar.gz
   sha256: 53cee21d7f2d8c25671e4a9d615b1833a495bc198bc44fe14d841298ae0684be
 
 build:
@@ -27,15 +27,15 @@ build:
     - hsstat = h5pyd._apps.hsstat:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pkgconfig
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - numpy >=1.17.3
     - requests-unixsocket
     - pytz
@@ -69,6 +69,7 @@ test:
   requires:
     - pip
     - h5py
+    - python {{ python_min }}
 
 about:
   home: http://github.com/HDFGroup/h5pyd
