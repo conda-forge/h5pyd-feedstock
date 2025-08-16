@@ -1,5 +1,5 @@
 {% set name = "h5pyd" %}
-{% set version = "0.18.0" %}
+{% set version = "0.22.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/h5pyd-{{ version }}.tar.gz
-  sha256: 53cee21d7f2d8c25671e4a9d615b1833a495bc198bc44fe14d841298ae0684be
+  sha256: 0dc8c607c3e0e4e53c3f741dd97c53450f174e3c4e4fbf7766cba417539a956b
 
 build:
   entry_points:
@@ -27,7 +27,7 @@ build:
     - hsstat = h5pyd._apps.hsstat:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -36,6 +36,7 @@ requirements:
     - pkgconfig
     - pip
   run:
+    - packaging
     - python >={{ python_min }}
     - numpy >=1.17.3
     - requests-unixsocket
