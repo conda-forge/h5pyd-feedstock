@@ -1,5 +1,5 @@
 {% set name = "h5pyd" %}
-{% set version = "0.22.0" %}
+{% set version = "0.23.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/h5pyd-{{ version }}.tar.gz
-  sha256: 0dc8c607c3e0e4e53c3f741dd97c53450f174e3c4e4fbf7766cba417539a956b
+  sha256: f8eaca406b6fac2b876410e1a4f218fe401bb6eae97e0954d82e5db00866a7e8
 
 build:
   entry_points:
@@ -38,7 +38,7 @@ requirements:
   run:
     - packaging
     - python >={{ python_min }}
-    - numpy >=1.17.3
+    - numpy >=2.0.0
     - requests-unixsocket
     - pytz
     - pyjwt
