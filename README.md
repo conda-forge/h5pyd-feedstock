@@ -3,11 +3,13 @@ About h5pyd-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/h5pyd-feedstock/blob/main/LICENSE.txt)
 
-Home: http://github.com/HDFGroup/h5pyd
+Home: https://pypi.org/project/h5pyd/
 
 Package license: LicenseRef-HDF5
 
 Summary: h5py compatible client lib for HDF REST API
+
+Development: https://github.com/HDFGroup/h5pyd
 
 Current build status
 ====================
