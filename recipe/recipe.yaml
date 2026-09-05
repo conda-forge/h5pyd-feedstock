@@ -1,0 +1,85 @@
+schema_version: 1
+
+context:
+  version: "1.0.0"
+
+package:
+  name: h5pyd
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/h/h5pyd/h5pyd-${{ version }}.tar.gz
+  sha256: 9c50bfc004e9fa1ea1742d45a989b12f3719097d1e18c14250cf60af66a99959
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - hsinfo = h5pyd._apps.hsinfo:main
+      - hsls = h5pyd._apps.hsls:main
+      - hstouch = h5pyd._apps.hstouch:main
+      - hsacl = h5pyd._apps.hsacl:main
+      - hsdel = h5pyd._apps.hsdel:main
+      - hsrm = h5pyd._apps.hsdel:main
+      - hsget = h5pyd._apps.hsget:main
+      - hsload = h5pyd._apps.hsload:main
+      - hsconfigure = h5pyd._apps.hsconfigure:main
+      - hscopy = h5pyd._apps.hscopy:main
+      - hscp = h5pyd._apps.hscopy:main
+      - hsmv = h5pyd._apps.hsmv:main
+      - hsdiff = h5pyd._apps.hsdiff:main
+      - hsstat = h5pyd._apps.hsstat:main
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools >=61
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - numpy >=2.0.0
+    - h5json >=2.0.0
+    - requests-unixsocket
+    - pytz
+    - packaging
+
+tests:
+  - python:
+      imports:
+        - h5pyd
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - hsinfo --help
+      - hsls --help
+      - hstouch --help
+      - hsacl --help
+      - hsdel --help
+      - hsrm --help
+      - hsget --help
+      - hsload --help
+      - hsconfigure --help
+      - hscopy --help
+      - hscp --help
+      - hsmv --help
+      - hsdiff --help
+      - hsstat --help
+
+about:
+  summary: h5py compatible client lib for HDF REST API
+  license: LicenseRef-HDF5
+  license_file: COPYING
+  homepage: https://pypi.org/project/h5pyd/
+  repository: https://github.com/HDFGroup/h5pyd
+
+extra:
+  recipe-maintainers:
+    - ocefpaf
